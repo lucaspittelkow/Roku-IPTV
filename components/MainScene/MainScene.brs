@@ -76,7 +76,7 @@ sub setChannel()
 	end if
 
 	'Probably would be good to make content = content.clone(true) but for now it works like this
-	content.streamFormat = "hls"
+	content.streamFormat = ""hls, mp4, mkv, mp3, avi,ts,flv"
 
 	if m.video.content <> invalid and m.video.content.url = content.url return
 
