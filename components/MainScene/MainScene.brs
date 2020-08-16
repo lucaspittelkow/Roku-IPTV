@@ -54,7 +54,7 @@ sub checkState()
     state = m.video.state
     if(state = "error")
         m.top.dialog = CreateObject("roSGNode", "Dialog")
-        m.top.dialog.title = "Error: " + str(m.video.errorCode)
+        m.top.dialog.title = "Erro: " + str(m.video.errorCode)
         m.top.dialog.message = m.video.errorMsg
     end if
 end sub
@@ -100,9 +100,9 @@ sub showdialog()
 
     keyboarddialog = createObject("roSGNode", "KeyboardDialog")
     keyboarddialog.backgroundUri = "pkg:/images/rsgde_bg_hd.jpg"
-    keyboarddialog.title = "Enter .m3u URL"
+    keyboarddialog.title = "Digite a URL da lista de canais"
 
-    keyboarddialog.buttons=["OK","Set back to Demo", "Save"]
+    keyboarddialog.buttons=["OK","Resetar para o Demo", "Salvar"]
     keyboarddialog.optionsDialog=true
 
     m.top.dialog = keyboarddialog
