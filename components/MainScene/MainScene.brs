@@ -12,6 +12,9 @@ sub init()
     m.video = m.top.FindNode("Video")
     m.video.ObserveField("state", "checkState")
 
+    m.current_channel_label = m.top.FindNode("current_channel_label")
+    m.current_channel_icon = m.top.FindNode("current_channel_icon")
+
     showdialog()  'Force a keyboard dialog.  
 End sub
 
@@ -86,7 +89,9 @@ sub setChannel()
 	m.video.SetCertificatesFile("common:/certs/ca-bundle.crt")
 	m.video.InitClientCertificates()
 
-	m.video.content = content
+    m.video.content = content
+    m.current_channel_icon.uri   = content.HDGRIDPOSTERURL
+    m.current_channel_label.text = content.shortdescriptionline1
 
 	m.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
 	m.video.trickplaybarvisibilityauto = false

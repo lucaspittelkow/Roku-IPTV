@@ -16,6 +16,25 @@
 		caption1NumLines="1"
 	/>
 
+	<Poster
+		id="current_channel_icon"
+		uri=""
+		width="44"
+		height="44"
+		translation="[860,50]"
+	/>
+
+	<Label
+		id="current_channel_label"
+		height="44"
+		width="0"
+		font="font:MediumBoldSystemFont"
+		text = ""
+		horizAlign = "left"
+		vertAlign = "center"
+		translation="[914, 50]"
+	/>
+
 	<Video
 		id="Video"
 		translation = "[860, 100]"
