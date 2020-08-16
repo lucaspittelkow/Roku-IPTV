@@ -1,10 +1,18 @@
+# Channel Details
 title=m3u Player
 major_version=1
 minor_version=0
 build_version=1
+
+# Channel Assets
 mm_icon_focus_hd=pkg:/images/icon_focus_hd.png
-requires_mkv=1
+
+# Splash Screen + Loading Screen Artwork
 splash_screen_fhd=pkg:/images/splash_fhd.png
-splash_color=#121212
+splash_color=#4e2a84
 splash_min_time=2000
+
+# Resolution
 ui_resolutions=fhd
+
+requires_mkv=1

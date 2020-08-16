@@ -17,7 +17,6 @@ sub getContent()
 		searchRequest.InitClientCertificates ()
 	end if
 
-
 	text = searchRequest.getToString()
 
 	reHasGroups = CreateObject("roRegex", "group-title\=" + chr(34) + "?([^" + chr(34) + "]*)"+chr(34)+"?,","")
