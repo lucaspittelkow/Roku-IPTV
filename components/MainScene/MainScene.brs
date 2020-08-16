@@ -15,7 +15,13 @@ sub init()
     m.current_channel_label = m.top.FindNode("current_channel_label")
     m.current_channel_icon = m.top.FindNode("current_channel_icon")
 
-    showdialog()  'Force a keyboard dialog.  
+    reg = CreateObject("roRegistrySection", "profile")
+    if reg.Exists("primaryfeed") then
+        m.get_channel_list.control = "RUN"
+    else
+        showdialog()  'Force a keyboard dialog.  
+    end if
+
 End sub
 
 ' **************************************************************
@@ -107,13 +113,14 @@ sub showdialog()
     keyboarddialog.backgroundUri = "pkg:/images/rsgde_bg_hd.jpg"
     keyboarddialog.title = "Digite a URL da lista de canais"
 
-    keyboarddialog.buttons=["OK","Resetar para o Demo", "Salvar"]
+    keyboarddialog.buttons=["OK","Fechar"]
     keyboarddialog.optionsDialog=true
 
     m.top.dialog = keyboarddialog
     m.top.dialog.text = m.global.feedurl
     m.top.dialog.keyboard.textEditBox.cursorPosition = len(m.global.feedurl)
     m.top.dialog.keyboard.textEditBox.maxTextLength = 300
+    m.top.dialog.focusButton = 0
 
     KeyboardDialog.observeFieldScoped("buttonSelected","onKeyPress")  'we observe button ok/cancel, if so goto to onKeyPress sub
 end sub
@@ -121,17 +128,11 @@ end sub
 
 sub onKeyPress()
     if m.top.dialog.buttonSelected = 0 ' OK
-        url = m.top.dialog.text
-        m.global.feedurl = url
-        m.save_feed_url.control = "RUN"
-        m.top.dialog.close = true
-        m.get_channel_list.control = "RUN"
-    else if m.top.dialog.buttonSelected = 1 ' Set back to Demo
-        m.top.dialog.text = "https://pastebin.com/raw/v0dE8SdX"
-    else if m.top.dialog.buttonSelected = 2 ' Save
         m.global.feedurl = m.top.dialog.text
         m.save_feed_url.control = "RUN"
-        'm.top.dialog.visible ="false"
-        'm.top.unobserveField("buttonSelected")
+        m.get_channel_list.control = "RUN"
+        m.top.dialog.close = true
+    else if m.top.dialog.buttonSelected = 1 ' Fechar
+        m.top.dialog.close = true
     end if
 end sub
