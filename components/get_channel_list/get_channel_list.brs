@@ -44,10 +44,9 @@ sub getContent()
 			if maPath.Count () = 2
 				item = group.CreateChild("ContentNode")
 				item.url = maPath [1]
-				item.title = title
+				item.shortdescriptionline1 = title
 
-				item.HDLISTITEMICONURL = icon
-				item.HDLISTITEMICONSELECTEDURL = icon
+				item.HDGRIDPOSTERURL = icon
 
 				inExtinf = False
 			end if

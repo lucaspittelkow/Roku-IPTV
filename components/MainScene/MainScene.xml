@@ -6,13 +6,15 @@
 <script type="text/brightscript" uri="pkg:/components/MainScene/MainScene.brs"/>
 <children>
 
-	<LabelList
+	<PosterGrid
 		id="list"
-		translation = "[100, 100]">
-		<Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="36"/>
-		<Font role="focusedFont" uri="pkg:/fonts/Roboto-Medium.ttf" size="36"/>
-		<Font role="sectionDividerFont" uri="pkg:/fonts/Roboto-Thin.ttf" size="24"/>
-	</LabelList>
+		translation = "[100, 100]"
+		basePosterSize = "[300, 300]"
+		itemSpacing = "[10, 15]"
+		numColumns="2"
+		numRows="5"
+		caption1NumLines="1"
+	/>
 
 	<Video
 		id="Video"

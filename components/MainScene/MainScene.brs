@@ -30,13 +30,13 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             result = true
         else if(key = "left")
             m.list.SetFocus(true)
-            m.video.translation = [800, 100]
+            m.video.translation = [860, 100]
             m.video.width = 960
             m.video.height = 540
             result = true
         else if(key = "back")
             m.list.SetFocus(true)
-            m.video.translation = [800, 100]
+            m.video.translation = [860, 100]
             m.video.width = 960
             m.video.height = 540
             result = true
